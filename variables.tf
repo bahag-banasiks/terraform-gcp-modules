@@ -9,9 +9,20 @@ variable "region" {
   default     = "us-central1"
 }
 
+variable "project_id" {
+  description = "GCP project ID"
+  type        = string
+}
+
 variable "container_image" {
   description = "Container image URL"
   type        = string
+}
+
+variable "container_port" {
+  description = "Container port"
+  type        = number
+  default     = 8080
 }
 
 variable "environment_variables" {
@@ -32,28 +43,22 @@ variable "memory" {
   default     = "512Mi"
 }
 
-variable "ingress" {
-  description = "Ingress settings"
-  type        = string
-  default     = "INGRESS_TRAFFIC_ALL"
-}
-
-variable "container_port" {
-  description = "Container port"
-  type        = number
-  default     = 8080
-}
-
-variable "max_instance_count" {
+variable "max_instances" {
   description = "Maximum number of instances"
   type        = number
   default     = 10
 }
 
-variable "min_instance_count" {
+variable "min_instances" {
   description = "Minimum number of instances"
   type        = number
   default     = 0
+}
+
+variable "ingress" {
+  description = "Ingress settings"
+  type        = string
+  default     = "INGRESS_TRAFFIC_ALL"
 }
 
 variable "make_public" {
