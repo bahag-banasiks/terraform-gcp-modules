@@ -43,13 +43,13 @@ variable "memory" {
   default     = "512Mi"
 }
 
-variable "max_instances" {
+variable "max_instance_count" {
   description = "Maximum number of instances"
   type        = number
   default     = 10
 }
 
-variable "min_instances" {
+variable "min_instance_count" {
   description = "Minimum number of instances"
   type        = number
   default     = 0
